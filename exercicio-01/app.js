@@ -1,3 +1,4 @@
+
 /*
 01 - Neste diretório (exercicio-01), há um index.html vazio.
 
@@ -24,7 +25,8 @@ Como mencionei durante a aula: não se preocupe em entender 100% o que os comand
 Utilize os espaços entre os comentários abaixo para executar os códigos dos 
 exercícios. Inclusive o alert mencionado acima.
 */
-
+console.log("se liga no console")
+//alert("Js is Awesome!")
 
 
 /*
@@ -35,19 +37,19 @@ exercícios. Inclusive o alert mencionado acima.
 05 - Declare uma const "myBirthYear", que recebe o ano do seu nascimento, com 4  
 dígitos. Ex.: 1930.
 */
-
+const myBirthYear = 1995
 
 
 /*
 06 - Declare uma const "currentYear", que recebe o ano atual, com 4 dígitos.
 */
-
+const currentYear = 2022
 
 
 /*
 07 - Exiba as const "myBirthYear" e "currentYear", lado a lado, no console do browser.
 */
-
+console.log(myBirthYear, currentYear)
 
 
 /*
@@ -62,7 +64,8 @@ acontece.
 - Exiba a "myAge" no console.
 */
 
-
+const myAge = myBirthYear - currentYear
+console.log(myAge)
 
 /*
 09 - Antes do console.log abaixo, declare uma const "ten", que recebe o número  
@@ -78,7 +81,12 @@ Não se assuste com as crases e os cifrões. Conversaremos mais sobre operaçõe
 matemáticas e strings (textos) em breve =)
 */
 
-// console.log(`Em ${valor1}, estarei com ${valor2} anos.`)
+const ten = 10
+const valor1 =  currentYear + 10
+const valor2 = myAge - ten
+
+
+console.log(`Em ${valor1}, estarei com ${valor2} anos.`)
 
 /*
 10 - Abra o site abaixo no browser e faça o seguinte:
