@@ -21,6 +21,11 @@
     5
 */
 
+let i = 0 
+while ( i < 5) {
+console.log(i)
+i++
+}
 
 
 /*
@@ -29,7 +34,9 @@
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
 
-
+for(let index = 0; index < 5; index++){
+  console.log(index)
+}
 
 /*
   03 - Comente o loop acima e:
@@ -42,7 +49,9 @@
   "Esta é a Xª vez que esta frase é exibida no console."
 */
 
-
+for(let index = 1; index <= 10; index++){
+  console.log(`Esta é a ${index} vez que esta frase é exibida no console.`)
+}
 
 /*
   04 - Comente o loop acima e:
@@ -55,7 +64,11 @@
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
-
+let upperCaseCities = []
+for(let index = 0;index < cities.length; index++){
+ upperCaseCities.push(cities[index].toUpperCase())
+}
+console.log(upperCaseCities)
 /*
   05 - Comente o console.log acima e:
 
@@ -64,9 +77,12 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
   - O template deve ser exibido apenas uma vez no console e o resultado deve ser:
     <li>João Grilo</li><li>Chicó</li><li>Rosinha</li>
 */
-
+let HTMLtemplate = ''
 const names = ['João Grilo', 'Chicó', 'Rosinha']
-
+for(let i = 0; i < names.length; i++){
+  HTMLtemplate = HTMLtemplate +`<li>${names[i]}</li>`
+}
+console.log(HTMLtemplate)
 /*
   06 - Comente o console.log acima e:
 
@@ -75,9 +91,13 @@ const names = ['João Grilo', 'Chicó', 'Rosinha']
   - Exiba no console um boolean indicando se o total dessa soma é 337;
   - O console deve exibir true.
 */
-
+let sum = 0
 const numbers = ['91', '5', '30', '97', '83', '31']
-
+for(let i = 0; i < numbers.length; i++){
+  sum = sum + Number(numbers[i])
+  console.log(sum)
+}
+console.log(sum === 337)
 /*
   07 - Comente o console.log acima.
 
