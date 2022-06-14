@@ -7,6 +7,11 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function multi(num1,num2){
+  return num1 * num2
+}
+
+console.log(multi(3,3))
 /*
   02
 
@@ -15,6 +20,12 @@
     2 números.
 */
 
+const divNumber = function (quantidade, divisor){
+  return quantidade / divisor
+}
+
+const result = divNumber(15,3)
+console.log(result)
 /*
   03
 
@@ -27,6 +38,13 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+const loopString = function(amauntLoop){
+  for(let i = 1;i <= amauntLoop; i++){
+    console.log(`Esta é a ${i}ª vez que essa string é exibida.`)
+  }
+}
+
+loopString(7)
 
 /*
   04
@@ -41,6 +59,16 @@
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+const upperCase = function(array){
+  const newArray = []
+ for(let i = 0; i < array.length; i++){
+  newArray.push(array[i].toUpperCase())
+ }
+ return newArray
+}
+
+let resultarray = upperCase(millennialWords)
+console.log(resultarray)
 /*
   05
 
@@ -53,7 +81,18 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+let contadorPositive = 0
+let contadorNegativo
+const isPositiviNumber = function(numbers = 0){
+  return numbers >= 1
+}
+for(let i = 0; i < randomNumbers.length; i++){
+    if(isPositiviNumber(randomNumbers[i])){
+      contadorPositive++
+    } else { contadorNegativo++ }
+}
 
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${contadorPositive} positivos e ${contadorNegativo} negativos.`)
 /*
   06
 
