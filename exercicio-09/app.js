@@ -17,16 +17,16 @@ function convertToString (value) {
   return String(value)
 }
 
-value = (string) => console.log(string)
-value('test')
+const convertToStringArrow = (value) => console.log(String(value))
+convertToStringArrow('test')
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-amauntString = (string) => console.log(string.length)
-amauntString('qualitativo')
+const amauntString = (string) => string.length
+console.log(amauntString('qualitativo'))
 /*
   03
 
@@ -36,7 +36,7 @@ amauntString('qualitativo')
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-tranformCaract = (string = 'Alguma string!')=> console.log(string.toLowerCase())
+const tranformCaract = (string = 'Alguma string!')=> console.log(string.toLowerCase())
 tranformCaract('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')
 /*
   04
@@ -45,7 +45,7 @@ tranformCaract('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
 
-indexCaracter = (caract, word) => { console.log(word.indexOf(caract)) }
+const indexCaracter = (caract, word) => { console.log(word.indexOf(caract)) }
 indexCaracter('v', 'palavra')
 /*
   05
@@ -53,8 +53,8 @@ indexCaracter('v', 'palavra')
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
-array = [ 'test0', 'error404', 'github']
-isItem = (item, array) => { console.log(array.includes(item))}
+let array = ['test0', 'error404', 'github']
+const isItem = (item, array) => { console.log(array.includes(item))}
 isItem('error404', array)
 
 /*
@@ -63,9 +63,9 @@ isItem('error404', array)
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-array0 = ['sas','test']
-array2 = ['paçoca', 'linguiça', 'mailaski']
-concatArrays = (list, list2) => {console.log(list.concat(list2))}
+let array0 = ['sas','test']
+let array2 = ['paçoca', 'linguiça', 'mailaski']
+const concatArrays = (list, list2) => {console.log(list.concat(list2))}
 concatArrays(array0, array2)
 /*
   07
@@ -75,8 +75,11 @@ concatArrays(array0, array2)
 */
 list = ['1', '2', '3']
 
-listOfLast = (array) => {console.log(array.pop())}
-listOfLast(list)
+listOfLast = (array) => {
+  array.pop()
+return array}
+
+console.log(listOfLast(list))
 
 /*
   08
@@ -84,14 +87,9 @@ listOfLast(list)
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-condition = (valor) => {
- if(typeof valor === 'string'){
-  return console.log(true)
- }
- return console.log(null)
-}
-condition('javascript')
-condition(3)
+const condition = (valor) =>  valor === null 
+console.log(condition('javascript'))
+console.log(condition(null))
 
 /*
   09
@@ -103,10 +101,15 @@ condition(3)
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
-myname = (callback) => {
-
+const envokeCallback = callback => {
+  callback()
 }
 
+const logName = () => {
+  console.log('Paulo Henrique')
+}
+
+envokeCallback(logName)
 /*
   10
 
@@ -117,7 +120,12 @@ myname = (callback) => {
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const callback = (value, callback) => {
+  return callback(value)
+}
+const triple = number => number * 3
 
+console.log(callback(33, triple))
 /*
   11
 
@@ -129,7 +137,7 @@ myname = (callback) => {
 
 const numbers = [1, 2, 3]
 numbers.forEach((value, index, array) => {
-  console.log(`O ${value}º item do array ${array} é ${index}.`)
+  console.log(`O ${value}º item do array ${array} é ${index + 1}.`)
 })
 /*
   12
@@ -169,6 +177,8 @@ for (let i = 0; i < letters.length; i++) {
 
 const section = document.querySelector('[data-js="section"]')
 
+
+// Aqui ele era um array 
 const review = [
   'Eu sempre adorei o filme e quando descobri que tinha o livro também fiquei doido. Demorei um pouco mas acabei comprando e finalmente li \o/.',
   'O primeiro filme foi baseado nesse livro, porém o livro (como sempre) é muito mais completo, com mais personagens, mais acontecimentos e até mesmo mais dinossauros. Na verdade nesse livro tem coisas do segundo e terceiro filme também, eles mudaram bastante nos filmes, acho que pra ficar mais comercial, e se o filme é bom, o livro é 100 vezes melhor.',
@@ -179,7 +189,8 @@ const review = [
 let paragraphs = ''
 
 review.forEach((value)=> {
-paragraphs.push(`<p>${value}</p>`)
+ paragraphs += `<p>${value}</p>`
+ console.log(paragraphs)
 })
 
 section.innerHTML = paragraphs
@@ -204,3 +215,14 @@ section.innerHTML = paragraphs
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+const getLikes = (name = []) => {
+  switch (name.length) {
+    case 0:
+      return 'niguém curtiu isso'
+    case 1: 
+     return `${name[0]} curtiu isso`
+    case 2:
+      return `${name[0]} e ${name[1]} curtiram isso`
+  }
+}
+console.log(getLikes(['Daniel', 'joao']))
