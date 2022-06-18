@@ -82,7 +82,7 @@ console.log(resultarray)
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 let contadorPositive = 0
-let contadorNegativo
+let contadorNegativo = 0
 const isPositiviNumber = function(numbers = 0){
   return numbers >= 1
 }
@@ -102,8 +102,18 @@ console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, se
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
+const getOddNumbers = function(number = []){
+  let newArray = []
+  for(let i = 0; i < number.length; i++){
+      if(number[i] % 2 !== 0){
+        newArray.push(number[i])
+      }
+  }
+  return newArray
+}
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
+
 
 /*
   07

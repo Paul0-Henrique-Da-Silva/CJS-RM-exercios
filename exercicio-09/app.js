@@ -17,13 +17,16 @@ function convertToString (value) {
   return String(value)
 }
 
+value = (string) => console.log(string)
+value('test')
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-
+amauntString = (string) => console.log(string.length)
+amauntString('qualitativo')
 /*
   03
 
@@ -33,7 +36,8 @@ function convertToString (value) {
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-
+tranformCaract = (string = 'Alguma string!')=> console.log(string.toLowerCase())
+tranformCaract('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')
 /*
   04
 
@@ -41,12 +45,17 @@ function convertToString (value) {
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
 
+indexCaracter = (caract, word) => { console.log(word.indexOf(caract)) }
+indexCaracter('v', 'palavra')
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+array = [ 'test0', 'error404', 'github']
+isItem = (item, array) => { console.log(array.includes(item))}
+isItem('error404', array)
 
 /*
   06
@@ -54,13 +63,20 @@ function convertToString (value) {
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-
+array0 = ['sas','test']
+array2 = ['paçoca', 'linguiça', 'mailaski']
+concatArrays = (list, list2) => {console.log(list.concat(list2))}
+concatArrays(array0, array2)
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+list = ['1', '2', '3']
+
+listOfLast = (array) => {console.log(array.pop())}
+listOfLast(list)
 
 /*
   08
@@ -68,6 +84,14 @@ function convertToString (value) {
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+condition = (valor) => {
+ if(typeof valor === 'string'){
+  return console.log(true)
+ }
+ return console.log(null)
+}
+condition('javascript')
+condition(3)
 
 /*
   09
@@ -79,6 +103,9 @@ function convertToString (value) {
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+myname = (callback) => {
+
+}
 
 /*
   10
@@ -101,7 +128,9 @@ function convertToString (value) {
 */
 
 const numbers = [1, 2, 3]
-
+numbers.forEach((value, index, array) => {
+  console.log(`O ${value}º item do array ${array} é ${index}.`)
+})
 /*
   12
 
@@ -112,6 +141,9 @@ const numbers = [1, 2, 3]
 
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
+
+letters.forEach((value)=>{ lettersCopy.push(value)})
+console.log(lettersCopy)
 
 for (let i = 0; i < letters.length; i++) {
   lettersCopy.push(letters[i])
@@ -145,6 +177,10 @@ const review = [
 ]
 
 let paragraphs = ''
+
+review.forEach((value)=> {
+paragraphs.push(`<p>${value}</p>`)
+})
 
 section.innerHTML = paragraphs
 
