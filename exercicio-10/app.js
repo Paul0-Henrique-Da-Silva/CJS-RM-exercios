@@ -9,6 +9,17 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
+let cat = {
+   name: 'gato',
+   age: 'idade',
+   color: 'cor',
+   bestFriends: ['juni', 'nada' , 'lito'],
+   sound: function (){
+    return 'meeooowww'
+   }
+}
+console.log(cat.name)
+console.log(cat.bestFriends[2])
 
 /*
   02
@@ -19,12 +30,16 @@
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
 
+console.log(`"name", que recebeu "${cat.name}", "age", que recebeu "${cat.age}", "color", que recebeu "${cat.color}", "bestFriends",
+ que recebeu um array com os itens "${cat.bestFriends[0]}" e "${cat.bestFriends[1]}", e "sound", que recebeu uma função que retorna "${cat.sound}`)
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 
+cat.age = '23'
+console.log(cat.age)
 /*
   04
 
@@ -32,7 +47,12 @@
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+const friends = (amigo) => {
+  cat.bestFriends.push(amigo)
+}
 
+friends('elizabet')
+console.log(cat.bestFriends)
 /*
   05
 
@@ -41,6 +61,20 @@
   - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
     colchetes.
 */
+// cat.color = 'cinza'
+// const changeColor = object => {
+//   object['color'] += 'e azul'
+// }
+// changeColor(cat)
+
+
+cat.color = []
+const addnewCor =  (cor) => {
+   cat.color.push(cor) 
+}
+addnewCor('red')
+addnewCor('blue')
+console.log(cat.color)
 
 /*
   06
@@ -49,6 +83,10 @@
     parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
+
+const isCompareType = (type) =>console.log(typeof type === 'object')
+isCompareType(cat) 
+ 
 
 /*
   07
@@ -59,6 +97,13 @@
 
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
+let dog = {
+  name: 'dog',
+  age: '2'
+}
+console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${ Number(cat.age) + Number(dog.age)}.`)
+
+
 
 /*
   08
@@ -68,16 +113,22 @@
   - Como você refatoraria esta função?
 */
 
-const isAnSUV = car => {
-  if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
-    return true
-  }
 
-  return false
+
+const suv = [
+'Honda HR-V',
+'Jeep Renegade',
+'Ford EcoSport',
+'Hyundai iX35',
+]
+
+const isAnSUV = car => {
+  if(suv.includes(car)) return  true
+    else return false
 }
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
@@ -91,3 +142,17 @@ const isAnSUV = car => {
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+
+const getTypeDefinition = type => {
+  const obj = {
+    null:'Seta, explicitamente, uma variável sem valor.',
+    undefined: 'Representa um valor não-setado.',
+    object: 'Arrays, Datas, Objetos literais, Funções, etc.'
+  }
+  ///obj.null
+  return obj[type]
+}
+
+console.log(getTypeDefinition('null'))
+
+
